@@ -407,3 +407,24 @@ body { font-family:var(--font-body); background:hsl(var(--background)); color:hs
     border-color: hsl(var(--primary));
     transform: scale(1.12);
 }
+
+/* TAB GALLERY INSIDE CARD */
+.tab-gallery { margin-top: 1.5rem; }
+.row { display: flex; flex-wrap: wrap; gap: 10px; }
+.column { flex: 0 0 calc(25% - 10px); cursor: pointer; }
+.column img { width: 100%; border-radius: 8px; opacity: 0.9; transition: 0.2s; }
+.column img:hover { opacity: 1; transform: scale(1.02); }
+
+/* EXPANDED IMAGE */
+.container {
+    position: fixed; inset: 0; background: rgba(0,0,0,0.95);
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    padding: 2rem; z-index: 9999; display: none;
+}
+.container img { max-width: 90%; max-height: 75vh; border-radius: 12px; box-shadow: 0 20px 40px rgba(0,0,0,0.6); }
+#imgtext-0 { margin-top: 1rem; color: #fff; font-size: 1.1rem; font-weight: 500; }
+.closebtn {
+    position: absolute; top: 1.5rem; right: 2rem; color: #fff; font-size: 2.5rem;
+    cursor: pointer; font-weight: bold;
+}
+.closebtn:hover { color: #ff5f5f; }
