@@ -28,7 +28,7 @@ if (menuBtn && menu) {
 }
 
 /* -------------------------------------------------
-   TAB GALLERY – PROJECT 0 (INSIDE CARD)
+   TAB GALLERY – PROJECT 0 (REAL IMAGES)
    ------------------------------------------------- */
 const PROJECT_0_IMAGES = [
     "Capture d'écran 2025-10-14 105555.png",
@@ -51,12 +51,24 @@ function openTabGallery() {
     const row = document.getElementById('gallery-row-0');
 
     row.innerHTML = '';
-    PROJECT_0_IMAGES.forEach(src => {
+
+    PROJECT_0_IMAGES.forEach(filename => {
+        const fullPath = `images/project-0/${filename}`;
+
         const col = document.createElement('div');
         col.className = 'column';
-        const img = document.createElement('img');
-        img.src = `images/project-0/${src}`;
-        img.alt = src.split('.')[0].replace(/Capture d'écran \d{4}-\d{2}-\d{2} /, '');
+
+        const img = new Image();
+        img.src = fullPath;
+        img.alt = filename.split('.')[0].replace(/Capture d'écran \d{4}-\d{2}-\d{2} /, '');
+        img.className = 'gallery-thumb';
+        
+        // If image fails → show placeholder
+        img.onerror = () => {
+            img.src = 'https://via.placeholder.com/300x200?text=Image+Not+Found';
+            img.alt = 'Missing: ' + filename;
+        };
+
         img.onclick = () => expandImage(0, img);
         col.appendChild(img);
         row.appendChild(col);
