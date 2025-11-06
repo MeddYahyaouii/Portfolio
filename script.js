@@ -1,47 +1,35 @@
-// Initialize Lucide icons
+// scripts/script.js FULL CODE
+// Lucide icons
 lucide.createIcons();
 
-// Smooth scroll navigation
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
+// Smooth scroll
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', e => {
         e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-            target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        }
+        const target = document.querySelector(a.getAttribute('href'));
+        if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
     });
 });
 
 // Navbar scroll effect
 const navbar = document.getElementById('navbar');
 window.addEventListener('scroll', () => {
-    if (window.scrollY > 50) {
-        navbar.classList.add('scrolled');
-    } else {
-        navbar.classList.remove('scrolled');
-    }
+    navbar.classList.toggle('scrolled', window.scrollY > 50);
 });
 
-// Scroll progress bar
-const scrollProgress = document.getElementById('scroll-progress');
+// Scroll progress
+const progress = document.getElementById('scroll-progress');
 window.addEventListener('scroll', () => {
-    const scrolled = (window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100;
-    scrollProgress.style.width = scrolled + '%';
+    const percent = (window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100;
+    progress.style.width = percent + '%';
 });
 
-// Mobile menu toggle
-const mobileMenuBtn = document.getElementById('mobile-menu-btn');
-const mobileMenu = document.getElementById('mobile-menu');
-
-mobileMenuBtn.addEventListener('click', () => {
-    mobileMenu.classList.toggle('active');
-});
-
-// Close mobile menu when clicking on a link
-document.querySelectorAll('.mobile-menu a').forEach(link => {
-    link.addEventListener('click', () => {
-        mobileMenu.classList.remove('active');
-    });
+// Mobile menu
+const menuBtn = document.getElementById('mobile-menu-btn');
+const menu = document.getElementById('mobile-menu');
+menuBtn.addEventListener('click', () => menu.classList.toggle('active'));
+document.querySelectorAll('.mobile-menu a').forEach(l => {
+    l.addEventListener('click', () => menu.classList.remove('active'));
 });
 
 // Portfolio modal
@@ -133,58 +121,33 @@ const projectData = [
 ];
 
 const modal = document.getElementById('project-modal');
-const modalClose = document.getElementById('modal-close');
-const modalTitle = document.getElementById('modal-title');
-const modalCompany = document.getElementById('modal-company');
-const modalDescription = document.getElementById('modal-description');
-const modalTechnologies = document.getElementById('modal-technologies');
+const close = document.getElementById('modal-close');
+const title = document.getElementById('modal-title');
+const company = document.getElementById('modal-company');
+const desc = document.getElementById('modal-description');
+const techs = document.getElementById('modal-technologies');
 
-document.querySelectorAll('.portfolio-card').forEach((card, index) => {
-    card.addEventListener('click', () => {
-        const project = projectData[index];
-        
-        modalTitle.textContent = project.title;
-        modalCompany.textContent = project.company;
-        modalDescription.innerHTML = `<p>${project.description}</p>`;
-        
-        modalTechnologies.innerHTML = project.technologies
-            .map(tech => `<span class="project-tech"><span>${tech}</span></span>`)
-            .join('');
-        
+document.querySelectorAll('.portfolio-card').forEach((c, i) => {
+    c.addEventListener('click', () => {
+        const p = projectData[i];
+        title.textContent = p.title;
+        company.textContent = p.company;
+        desc.innerHTML = `<p>${p.description}</p>`;
+        techs.innerHTML = p.technologies.map(t => `<span class="project-tech"><span>${t}</span></span>`).join('');
         modal.classList.add('active');
     });
 });
 
-modalClose.addEventListener('click', () => {
-    modal.classList.remove('active');
-});
+close.addEventListener('click', () => modal.classList.remove('active'));
+modal.addEventListener('click', e => { if (e.target === modal) modal.classList.remove('active'); });
 
-modal.addEventListener('click', (e) => {
-    if (e.target === modal) {
-        modal.classList.remove('active');
-    }
-});
-
-// Contact form submission
-const contactForm = document.getElementById('contact-form');
-contactForm.addEventListener('submit', (e) => {
+// Contact form (demo)
+document.getElementById('contact-form').addEventListener('submit', e => {
     e.preventDefault();
-    
-    const name = document.getElementById('name').value;
-    const email = document.getElementById('email').value;
-    const message = document.getElementById('message').value;
-    
-    if (!name || !email || !message) {
-        alert('Please fill in all required fields.');
-        return;
-    }
-    
-    // In real implementation, send to backend
-    alert('Message sent! Thank you for reaching out. I\'ll get back to you soon.');
-    contactForm.reset();
-});
-
-// Reinitialize icons after dynamic content loads
-document.addEventListener('DOMContentLoaded', () => {
-    lucide.createIcons();
+    const name = document.getElementById('name').value.trim();
+    const email = document.getElementById('email').value.trim();
+    const msg = document.getElementById('message').value.trim();
+    if (!name || !email || !msg) return alert('Please fill all required fields.');
+    alert('Message sent! (demo)');
+    e.target.reset();
 });
