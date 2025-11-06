@@ -3,160 +3,83 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Mohamed Yahyaoui | Power BI & Data Analytics Expert</title>
+  <title>Mohamed Yahyaoui | BI Engineer</title>
   <link rel="stylesheet" href="style.css" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Poppins:wght@600;700&display=swap" rel="stylesheet" />
-  <script src="script.js" defer></script>
+  <link rel="icon" href="favicon.ico" />
+  <script defer src="script.js"></script>
 </head>
 
 <body>
-  <!-- ===== HEADER ===== -->
-  <header>
-    <div class="container navbar">
-      <a href="#" class="logo">Mohamed <span>Yahyaoui</span></a>
-
-      <button id="navToggle" aria-label="Toggle navigation">☰</button>
-      <ul class="nav-links">
-        <li><a href="#about">About</a></li>
-        <li><a href="#skills">Skills</a></li>
-        <li><a href="#experience">Experience</a></li>
-        <li><a href="#portfolio">Portfolio</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
+  <!-- ===== NAVBAR ===== -->
+  <header class="navbar">
+    <div class="container">
+      <h1 class="logo"><span>Mohamed</span> Yahyaoui</h1>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="#home" class="active">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#portfolio">Portfolio</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
     </div>
   </header>
 
-  <!-- ===== HERO ===== -->
-  <section class="hero" id="home">
-    <div class="container">
-      <img src="images/profile.jpg" alt="Mohamed Yahyaoui portrait" class="profile-img" />
-      <div class="hero-right">
-        <h2>Power BI & Data Analytics Expert</h2>
-        <h3>Turning data into actionable insights</h3>
-        <p>
-          I’m <b>Mohamed Yahyaoui</b> — a Business Intelligence Engineer with over 4 years of experience transforming raw data into strategic insights through
-          <b>Power BI</b>, <b>SQL</b>, and <b>SSIS</b>.
-        </p>
+  <!-- ===== HERO SECTION ===== -->
+  <section id="home" class="hero">
+    <div class="hero-content container">
+      <div class="hero-text">
+        <h2>Business Intelligence Engineer</h2>
+        <h3>Power BI & Data Analytics Expert</h3>
+        <p>Engineer in Business Intelligence with 4+ years of experience transforming raw data into strategic insights through Power BI, SQL, and SSIS.</p>
         <div class="hero-buttons">
-          <a href="#portfolio" class="btn primary">View My Work</a>
-          <a href="#contact" class="btn secondary">Contact Me</a>
+          <a href="#portfolio" class="btn-primary">View My Work</a>
+          <a href="#contact" class="btn-secondary">Contact Me</a>
         </div>
-        <div class="hero-stats">
-          <span>💼 4+ Years Experience</span>
-          <span>📊 25+ Dashboards Delivered</span>
-          <span>🎓 Microsoft Certified (PL-300)</span>
-        </div>
+        <ul class="highlights">
+          <li>📊 4+ Years Experience</li>
+          <li>📈 25+ Dashboards Delivered</li>
+          <li>🏆 Microsoft Certified: Power BI Data Analyst (PL-300)</li>
+        </ul>
+      </div>
+      <div class="hero-image">
+        <img src="portrait.png" alt="Mohamed Yahyaoui Portrait">
       </div>
     </div>
   </section>
 
   <!-- ===== ABOUT ===== -->
-  <section class="about" id="about">
-    <div class="container">
-      <h2 class="section-title">About Me</h2>
-      <p>
-        I’m a passionate <b>Business Intelligence Engineer</b> whose journey merges data analysis and graphic design.  
-        My hybrid background allows me to build visually engaging and insight-driven dashboards that help businesses make better decisions.
-      </p>
-    </div>
+  <section id="about" class="about container">
+    <h2>About</h2>
+    <p>
+      Mohamed Yahyaoui is a Business Intelligence Engineer whose journey merges data analysis and graphic design.
+      His hybrid background allows him to transform data into visually engaging dashboards that drive business decisions.
+    </p>
+    <p><strong>🎓 Engineer Diploma:</strong> ESPRIT – Private Higher School of Engineering and Technology<br>
+      <strong>Major:</strong> Computer Science (2017–2022)
+    </p>
   </section>
 
   <!-- ===== SKILLS ===== -->
-  <section id="skills">
-    <div class="container">
-      <h2 class="section-title">Skills & Expertise</h2>
-      <div class="skills-grid">
-        <div class="skill-card">Power BI (DAX, Data Modeling, Power Query)</div>
-        <div class="skill-card">SQL / T-SQL (Optimization, Stored Procedures)</div>
-        <div class="skill-card">SSIS (ETL development & automation)</div>
-        <div class="skill-card">Data Architecture (Staging → ODS → DWH)</div>
-        <div class="skill-card">Dashboard Design & Storytelling</div>
-        <div class="skill-card">Python (Automation & scraping)</div>
-        <div class="skill-card">Business Understanding (Supply Chain, Finance, HR)</div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== EXPERIENCE ===== -->
-  <section id="experience">
-    <div class="container">
-      <h2 class="section-title">Experience</h2>
-      <div class="experience-list">
-        <div class="experience-card">
-          <h3>OZEOL — BI Developer <span>(2025–Present)</span></h3>
-          <p>Structuring BI architecture (Staging, ODS, DWH) and migrating Excel/Cognos reporting to Power BI.</p>
-        </div>
-        <div class="experience-card">
-          <h3>CSM-GIAS (Groupe Slama) — BI Engineer <span>(2023–2024)</span></h3>
-          <p>Led data integration using SSIS, managed SQL Server jobs, and created strategic Power BI dashboards.</p>
-        </div>
-        <div class="experience-card">
-          <h3>Goldina — BI Analyst <span>(2022–2023)</span></h3>
-          <p>Implemented Power BI as a reporting solution, built ETL pipelines, and supported business decision-making.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== PORTFOLIO ===== -->
-  <section id="portfolio">
-    <div class="container">
-      <h2 class="section-title">Projects</h2>
-      <div class="portfolio-grid">
-        <div class="portfolio-card">
-          <img src="images/project1.jpg" alt="Sales Dashboard" />
-          <div class="card-body">
-            <h3>Sales Performance Dashboard</h3>
-            <p>Power BI dashboard analyzing multi-channel sales performance with interactive KPIs and trend analysis.</p>
-          </div>
-        </div>
-
-        <div class="portfolio-card">
-          <img src="images/project2.jpg" alt="ETL Project" />
-          <div class="card-body">
-            <h3>SSIS ETL Automation</h3>
-            <p>Automated data extraction from ERP and CRM systems to SQL Server, improving processing time by 60%.</p>
-          </div>
-        </div>
-
-        <div class="portfolio-card">
-          <img src="images/project3.jpg" alt="Inventory Dashboard" />
-          <div class="card-body">
-            <h3>Inventory Optimization</h3>
-            <p>Designed a stock monitoring dashboard integrating financial and operational KPIs for a retail company.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== CONTACT ===== -->
-  <section id="contact">
-    <div class="container">
-      <h2 class="section-title">Contact Me</h2>
-      <p>Feel free to reach out for collaborations or job opportunities.</p>
-
-      <form class="contact-form">
-        <input type="text" name="name" placeholder="Name" required />
-        <input type="email" name="email" placeholder="Email" required />
-        <input type="text" name="subject" placeholder="Subject" required />
-        <textarea name="message" placeholder="Message" rows="5" required></textarea>
-        <button type="submit" class="btn primary">Send Message</button>
-      </form>
-
-      <p style="margin-top:16px;">
-        📧 <a href="mailto:meddyahyaouii@gmail.com">meddyahyaouii@gmail.com</a>  
-        | 📞 <a href="tel:+21624628358">+216 24 628 358</a>  
-        | 🌍 Beni Khiar, Nabeul – Tunisia
-      </p>
+  <section id="skills" class="skills container">
+    <h2>Skills & Expertise</h2>
+    <div class="skills-grid">
+      <div class="skill">Power BI (DAX, Data Modeling, Power Query)</div>
+      <div class="skill">SQL / T-SQL (Optimization, Stored Procedures)</div>
+      <div class="skill">SSIS (ETL Development & Automation)</div>
+      <div class="skill">Data Architecture (Staging → ODS → DWH)</div>
+      <div class="skill">Dashboard Design & Storytelling</div>
+      <div class="skill">Python (Automation & Scraping)</div>
+      <div class="skill">Business Understanding (Supply Chain, Finance, HR)</div>
     </div>
   </section>
 
   <!-- ===== FOOTER ===== -->
   <footer>
-    <p>© 2025 Mohamed Yahyaoui | Built with ❤️ using HTML, CSS & JavaScript</p>
+    <div class="container">
+      <p>© 2025 Mohamed Yahyaoui | Business Intelligence Engineer</p>
+    </div>
   </footer>
 </body>
 </html>
