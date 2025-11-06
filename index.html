@@ -3,146 +3,160 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Mohamed Yahyaoui | BI Engineer Portfolio</title>
-
+  <title>Mohamed Yahyaoui | Power BI & Data Analytics Expert</title>
   <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Poppins:wght@600;700&display=swap" rel="stylesheet" />
   <script src="script.js" defer></script>
-
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
 </head>
+
 <body>
-  <!-- Navbar -->
+  <!-- ===== HEADER ===== -->
   <header>
-    <nav class="navbar">
-      <h1 class="logo">Mohamed <span>Yahyaoui</span></h1>
+    <div class="container navbar">
+      <a href="#" class="logo">Mohamed <span>Yahyaoui</span></a>
+
+      <button id="navToggle" aria-label="Toggle navigation">☰</button>
       <ul class="nav-links">
-        <li><a href="#home">Home</a></li>
         <li><a href="#about">About</a></li>
         <li><a href="#skills">Skills</a></li>
         <li><a href="#experience">Experience</a></li>
-        <li><a href="#services">Services</a></li>
         <li><a href="#portfolio">Portfolio</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
-    </nav>
+    </div>
   </header>
 
-  <!-- Hero Section -->
-  <section id="home" class="hero">
-    <div class="hero-content">
-      <div class="hero-left">
-        <img src="images/profile.png" alt="Mohamed Yahyaoui Portrait" class="profile-img">
-      </div>
+  <!-- ===== HERO ===== -->
+  <section class="hero" id="home">
+    <div class="container">
+      <img src="images/profile.jpg" alt="Mohamed Yahyaoui portrait" class="profile-img" />
       <div class="hero-right">
-        <h2>Business Intelligence Engineer</h2>
-        <h3>Power BI & Data Analytics Expert</h3>
-        <p>Engineer in Business Intelligence with 4 years of experience turning raw data into strategic insights through Power BI, SQL, and SSIS.</p>
+        <h2>Power BI & Data Analytics Expert</h2>
+        <h3>Turning data into actionable insights</h3>
+        <p>
+          I’m <b>Mohamed Yahyaoui</b> — a Business Intelligence Engineer with over 4 years of experience transforming raw data into strategic insights through
+          <b>Power BI</b>, <b>SQL</b>, and <b>SSIS</b>.
+        </p>
         <div class="hero-buttons">
           <a href="#portfolio" class="btn primary">View My Work</a>
           <a href="#contact" class="btn secondary">Contact Me</a>
         </div>
         <div class="hero-stats">
-          <p>📊 4+ Years Experience</p>
-          <p>📈 25+ Dashboards Delivered</p>
-          <p>🎓 Microsoft Certified: Power BI Data Analyst (PL-300)</p>
+          <span>💼 4+ Years Experience</span>
+          <span>📊 25+ Dashboards Delivered</span>
+          <span>🎓 Microsoft Certified (PL-300)</span>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- About Section -->
-  <section id="about" class="about section">
-    <h2>About</h2>
-    <p>Mohamed Yahyaoui is a Business Intelligence Engineer whose journey merges data analysis and graphic design. His hybrid background allows him to transform data into visually engaging, insight-driven dashboards that enhance business decision-making.</p>
-    <h3>Education</h3>
-    <p>Engineer Diploma (Bac +5) – ESPRIT (Private Higher School of Engineering and Technology)</p>
-    <p>Major: Computer Science (2017–2022)</p>
-  </section>
-
-  <!-- Skills Section -->
-  <section id="skills" class="skills section">
-    <h2>Skills & Expertise</h2>
-    <div class="skills-grid">
-      <div class="skill-card">Power BI (DAX, Data Modeling, Power Query)</div>
-      <div class="skill-card">SQL / T-SQL (Optimization, Stored Procedures)</div>
-      <div class="skill-card">SSIS (ETL Development & Automation)</div>
-      <div class="skill-card">Data Architecture (Staging → ODS → DWH)</div>
-      <div class="skill-card">Dashboard Design & Storytelling</div>
-      <div class="skill-card">Python (Automation & Scraping)</div>
-      <div class="skill-card">Business Understanding (Supply Chain, Finance, HR)</div>
+  <!-- ===== ABOUT ===== -->
+  <section class="about" id="about">
+    <div class="container">
+      <h2 class="section-title">About Me</h2>
+      <p>
+        I’m a passionate <b>Business Intelligence Engineer</b> whose journey merges data analysis and graphic design.  
+        My hybrid background allows me to build visually engaging and insight-driven dashboards that help businesses make better decisions.
+      </p>
     </div>
   </section>
 
-  <!-- Experience Section -->
-  <section id="experience" class="experience section">
-    <h2>Experience</h2>
-    <div class="experience-card">
-      <h3>OZEOL – BI Developer (2025–Present)</h3>
-      <p>Structuring BI architecture (Staging, ODS, DWH) and migrating Excel/Cognos reporting to Power BI.</p>
-    </div>
-    <div class="experience-card">
-      <h3>CSM-GIAS (Groupe Slama) – BI Engineer (2023–2024)</h3>
-      <p>Integrated Power BI into IT workflows, created analytical dashboards, and managed SSIS pipelines.</p>
-    </div>
-    <div class="experience-card">
-      <h3>Freelance BI Consultant (2021–2023)</h3>
-      <p>Delivered Power BI and ETL solutions for clients in Dubai and Tanzania.</p>
-    </div>
-  </section>
-
-  <!-- Services Section -->
-  <section id="services" class="services section">
-    <h2>Services</h2>
-    <div class="services-grid">
-      <div class="service-card">BI Consulting – Building scalable data architectures.</div>
-      <div class="service-card">Dashboard Design & Visualization – Creating interactive KPI dashboards.</div>
-      <div class="service-card">ETL Development (SSIS) – Automating and optimizing data pipelines.</div>
-      <div class="service-card">Power BI Implementation & Migration – Transitioning legacy systems.</div>
-      <div class="service-card">Power BI Training – Upskilling teams in reporting.</div>
-    </div>
-  </section>
-
-  <!-- Portfolio Section -->
-  <section id="portfolio" class="portfolio section">
-    <h2>Portfolio</h2>
-    <div class="portfolio-grid">
-      <!-- Example Card -->
-      <div class="portfolio-card">
-        <img src="images/project1.png" alt="Flow Drive Dashboard">
-        <h3>Flow Drive Dashboard – OZEOL</h3>
-        <p>Real-time Power BI solution tracking booking, invoicing, and logistics KPIs across departments.</p>
-      </div>
-      <div class="portfolio-card">
-        <img src="images/project2.png" alt="Finance Forecasting Dashboard">
-        <h3>Finance Forecasting Dashboard – OZEOL</h3>
-        <p>Predicts weekly payment needs and optimizes cash flow via Power BI forecasting models.</p>
-      </div>
-      <div class="portfolio-card">
-        <img src="images/project3.png" alt="Industrial Cost Dashboard">
-        <h3>Industrial Cost Dashboard – CSM-GIAS</h3>
-        <p>Analyzes product cost structure to improve profitability and production efficiency.</p>
+  <!-- ===== SKILLS ===== -->
+  <section id="skills">
+    <div class="container">
+      <h2 class="section-title">Skills & Expertise</h2>
+      <div class="skills-grid">
+        <div class="skill-card">Power BI (DAX, Data Modeling, Power Query)</div>
+        <div class="skill-card">SQL / T-SQL (Optimization, Stored Procedures)</div>
+        <div class="skill-card">SSIS (ETL development & automation)</div>
+        <div class="skill-card">Data Architecture (Staging → ODS → DWH)</div>
+        <div class="skill-card">Dashboard Design & Storytelling</div>
+        <div class="skill-card">Python (Automation & scraping)</div>
+        <div class="skill-card">Business Understanding (Supply Chain, Finance, HR)</div>
       </div>
     </div>
   </section>
 
-  <!-- Contact Section -->
-  <section id="contact" class="contact section">
-    <h2>Contact</h2>
-    <p>📧 <a href="mailto:meddyahyaouii@gmail.com">meddyahyaouii@gmail.com</a></p>
-    <p>📞 <a href="tel:+21624628358">+216 24 628 358</a></p>
-    <p>🌍 Beni Khiar, Nabeul – Tunisia</p>
-    <form class="contact-form">
-      <input type="text" placeholder="Name" required />
-      <input type="email" placeholder="Email" required />
-      <input type="text" placeholder="Subject" required />
-      <textarea placeholder="Message" rows="5" required></textarea>
-      <button type="submit" class="btn primary">Send Message</button>
-    </form>
+  <!-- ===== EXPERIENCE ===== -->
+  <section id="experience">
+    <div class="container">
+      <h2 class="section-title">Experience</h2>
+      <div class="experience-list">
+        <div class="experience-card">
+          <h3>OZEOL — BI Developer <span>(2025–Present)</span></h3>
+          <p>Structuring BI architecture (Staging, ODS, DWH) and migrating Excel/Cognos reporting to Power BI.</p>
+        </div>
+        <div class="experience-card">
+          <h3>CSM-GIAS (Groupe Slama) — BI Engineer <span>(2023–2024)</span></h3>
+          <p>Led data integration using SSIS, managed SQL Server jobs, and created strategic Power BI dashboards.</p>
+        </div>
+        <div class="experience-card">
+          <h3>Goldina — BI Analyst <span>(2022–2023)</span></h3>
+          <p>Implemented Power BI as a reporting solution, built ETL pipelines, and supported business decision-making.</p>
+        </div>
+      </div>
+    </div>
   </section>
 
-  <!-- Footer -->
+  <!-- ===== PORTFOLIO ===== -->
+  <section id="portfolio">
+    <div class="container">
+      <h2 class="section-title">Projects</h2>
+      <div class="portfolio-grid">
+        <div class="portfolio-card">
+          <img src="images/project1.jpg" alt="Sales Dashboard" />
+          <div class="card-body">
+            <h3>Sales Performance Dashboard</h3>
+            <p>Power BI dashboard analyzing multi-channel sales performance with interactive KPIs and trend analysis.</p>
+          </div>
+        </div>
+
+        <div class="portfolio-card">
+          <img src="images/project2.jpg" alt="ETL Project" />
+          <div class="card-body">
+            <h3>SSIS ETL Automation</h3>
+            <p>Automated data extraction from ERP and CRM systems to SQL Server, improving processing time by 60%.</p>
+          </div>
+        </div>
+
+        <div class="portfolio-card">
+          <img src="images/project3.jpg" alt="Inventory Dashboard" />
+          <div class="card-body">
+            <h3>Inventory Optimization</h3>
+            <p>Designed a stock monitoring dashboard integrating financial and operational KPIs for a retail company.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CONTACT ===== -->
+  <section id="contact">
+    <div class="container">
+      <h2 class="section-title">Contact Me</h2>
+      <p>Feel free to reach out for collaborations or job opportunities.</p>
+
+      <form class="contact-form">
+        <input type="text" name="name" placeholder="Name" required />
+        <input type="email" name="email" placeholder="Email" required />
+        <input type="text" name="subject" placeholder="Subject" required />
+        <textarea name="message" placeholder="Message" rows="5" required></textarea>
+        <button type="submit" class="btn primary">Send Message</button>
+      </form>
+
+      <p style="margin-top:16px;">
+        📧 <a href="mailto:meddyahyaouii@gmail.com">meddyahyaouii@gmail.com</a>  
+        | 📞 <a href="tel:+21624628358">+216 24 628 358</a>  
+        | 🌍 Beni Khiar, Nabeul – Tunisia
+      </p>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
   <footer>
-    <p>© 2025 Mohamed Yahyaoui | Business Intelligence Engineer</p>
+    <p>© 2025 Mohamed Yahyaoui | Built with ❤️ using HTML, CSS & JavaScript</p>
   </footer>
 </body>
 </html>
