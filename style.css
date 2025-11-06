@@ -428,3 +428,32 @@ body { font-family:var(--font-body); background:hsl(var(--background)); color:hs
     cursor: pointer; font-weight: bold;
 }
 .closebtn:hover { color: #ff5f5f; }
+
+/* GALLERY THUMBNAILS */
+.gallery-thumb {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    object-fit: cover;
+    opacity: 0.9;
+    transition: all 0.2s ease;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.gallery-thumb:hover {
+    opacity: 1;
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+}
+
+/* Ensure grid layout */
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin: 0 -6px;
+}
+.column {
+    flex: 0 0 calc(25% - 12px);
+    padding: 0 6px;
+}
