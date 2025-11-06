@@ -119,7 +119,7 @@
             </div>
         </div>
     </section>
-    <!-- Experience Section -->
+    <!-- Experience Section – 100% CORRECT -->
     <section id="experience" class="section">
         <div class="container">
             <h2 class="section-title gradient-text">Experience</h2>
@@ -283,41 +283,28 @@
             </div>
         </div>
     </section>
-
-    <!-- Portfolio Section -->
+    <!-- Portfolio Section – Updated with correct freelance tags -->
     <section id="portfolio" class="section">
         <div class="grid-pattern"></div>
         <div class="container">
             <h2 class="section-title gradient-text">Portfolio</h2>
             <p class="section-subtitle">12 enterprise-grade BI solutions delivered across multiple industries</p>
             <div class="portfolio-grid">
-
-<!-- PROJECT 0 – TAB GALLERY (INSIDE CARD) -->
-<div class="glass-card card portfolio-card" data-project="0">
-    <img src="images/project-0.png" alt="Flow Drive Dashboard" class="project-image">
-    <span class="project-category">Operations</span>
-    <h3>Flow Drive Dashboard</h3>
-    <p class="project-company">OZEOL – Tunisia (2025)</p>
-    <p class="project-description">Real-time Power BI solution tracking booking, invoicing, and logistics KPIs across departments.</p>
-    <div class="project-tech">
-        <span>Power BI</span>
-        <span>SQL Server</span>
-        <span>SSIS</span>
-        <span class="tech-more">+2</span>
-    </div>
-
-    <!-- GALLERY (hidden until click) -->
-    <div id="tab-gallery-0" class="tab-gallery" style="display:none; margin-top:1.5rem;">
-        <div class="row" id="gallery-row-0"></div>
-        <div class="container" id="expanded-container-0" style="display:none;">
-            <span class="closebtn" onclick="closeGallery(0)">X</span>
-            <img id="expandedImg-0" style="max-width:90%; max-height:75vh; border-radius:12px;">
-            <div id="imgtext-0" style="margin-top:1rem; color:white; font-size:1.1rem;"></div>
-        </div>
-    </div>
-</div>
-
-                <!-- ==================== PROJECT 1 (uses modal) ==================== -->
+                <!-- Project 0 -->
+                <div class="glass-card card portfolio-card" data-project="0">
+                    <img src="images/project-0.png" alt="Flow Drive Dashboard" class="project-image">
+                    <span class="project-category">Operations</span>
+                    <h3>Flow Drive Dashboard</h3>
+                    <p class="project-company">OZEOL – Tunisia (2025)</p>
+                    <p class="project-description">Real-time Power BI solution tracking booking, invoicing, and logistics KPIs across departments.</p>
+                    <div class="project-tech">
+                        <span>Power BI</span>
+                        <span>SQL Server</span>
+                        <span>SSIS</span>
+                        <span class="tech-more">+2</span>
+                    </div>
+                </div>
+                <!-- Project 1 -->
                 <div class="glass-card card portfolio-card" data-project="1">
                     <img src="images/project-1.png" alt="Instance 6 Dashboard" class="project-image">
                     <span class="project-category">Management</span>
@@ -331,8 +318,7 @@
                         <span class="tech-more">+1</span>
                     </div>
                 </div>
-
-                <!-- ==================== PROJECT 2 (uses modal) ==================== -->
+                <!-- Project 2 -->
                 <div class="glass-card card portfolio-card" data-project="2">
                     <img src="images/project-2.png" alt="Instance 4 Dashboard" class="project-image">
                     <span class="project-category">Supply Chain</span>
@@ -346,9 +332,6 @@
                         <span class="tech-more">+1</span>
                     </div>
                 </div>
-
-                <!-- ==================== PROJECT 3–11 (unchanged – use modal) ==================== -->
-                <!-- (Your original 9 cards go here – keep exactly as they are) -->
                 <!-- Project 3 -->
                 <div class="glass-card card portfolio-card" data-project="3">
                     <img src="images/project-3.png" alt="Quality Control Dashboard" class="project-image">
@@ -431,7 +414,7 @@
                         <span>SSIS</span>
                     </div>
                 </div>
-                <!-- Project 9 -->
+                <!-- Project 9 – MIRSPORT -->
                 <div class="glass-card card portfolio-card" data-project="9">
                     <img src="images/project-9.png" alt="Football Players Catalogue Dashboard" class="project-image">
                     <span class="project-category">Sports Analytics</span>
@@ -444,7 +427,7 @@
                         <span>SQL Server</span>
                     </div>
                 </div>
-                <!-- Project 10 -->
+                <!-- Project 10 – MIRSPORT -->
                 <div class="glass-card card portfolio-card" data-project="10">
                     <img src="images/project-10.png" alt="AFCON Insights Dashboard" class="project-image">
                     <span class="project-category">Sports Analytics</span>
@@ -457,7 +440,7 @@
                         <span>Excel</span>
                     </div>
                 </div>
-                <!-- Project 11 -->
+                <!-- Project 11 – Tanzania -->
                 <div class="glass-card card portfolio-card" data-project="11">
                     <img src="images/project-11.png" alt="Digital Transformation – BI Implementation" class="project-image">
                     <span class="project-category">Enterprise</span>
@@ -471,11 +454,9 @@
                         <span class="tech-more">+1</span>
                     </div>
                 </div>
-
             </div>
         </div>
     </section>
-
     <!-- Contact Section -->
     <section id="contact" class="section">
         <div class="container">
@@ -537,18 +518,17 @@
             </div>
         </div>
     </section>
-
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
             <p>&copy; 2025 Mohamed Yahyaoui. All rights reserved.</p>
         </div>
     </footer>
-
-    <!-- Modal with Gallery (for projects 1–11) -->
+    <!-- Modal with Gallery -->
     <div id="project-modal" class="modal">
         <div class="modal-content">
             <button class="modal-close" id="modal-close">×</button>
+            
             <div class="modal-gallery">
                 <div class="main-image-container">
                     <img id="modal-main-image" src="" alt="Project screenshot" class="modal-main-image">
@@ -557,13 +537,13 @@
                     <!-- JS injects thumbnails here -->
                 </div>
             </div>
+            
             <h2 id="modal-title"></h2>
             <p id="modal-company"></p>
             <div id="modal-description"></div>
             <div id="modal-technologies"></div>
         </div>
     </div>
-
     <!-- JS -->
     <script src="scripts/script.js"></script>
 </body>
