@@ -22,10 +22,12 @@ window.addEventListener('scroll', () => {
 // Mobile menu
 const menuBtn = document.getElementById('mobile-menu-btn');
 const menu = document.getElementById('mobile-menu');
-menuBtn.addEventListener('click', () => menu.classList.toggle('active'));
-document.querySelectorAll('.mobile-menu a').forEach(l => l.addEventListener('click', () => menu.classList.remove('active')));
+if (menuBtn && menu) {
+    menuBtn.addEventListener('click', () => menu.classList.toggle('active'));
+    document.querySelectorAll('.mobile-menu a').forEach(l => l.addEventListener('click', () => menu.classList.remove('active')));
+}
 
-// ==================== PROJECT DATA – EXACT FILE NAMES ====================
+// ==================== PROJECT DATA (ONLY PROJECT 0 HAS IMAGES) ====================
 const projectData = [
     {
         title: "Flow Drive Dashboard",
@@ -43,20 +45,17 @@ const projectData = [
             "project-0/Capture d'écran 2025-10-14 105848.png"
         ]
     },
-    { title: "Instance 6 – BUM SC & ZM SC Dashboard", company: "OZEOL – Tunisia", description: "Provides Business Unit and Zone Managers with KPIs on billing, transport, and container rates.", technologies: ["Power BI", "SQL Server", "SSIS", "SAP"], images: [] },
-    { title: "Instance 4 – BUM SC & Team Dashboard", company: "OZEOL – Tunisia", description: "Consolidates turnover, logistics, and disputes KPIs for supply chain managers, improving daily decision-making.", technologies: ["Power BI", "SQL Server", "SSIS", "SAP"], images: [] },
-    { title: "Quality Control – Supply Chain Live Dashboard", company: "OZEOL – Tunisia", description: "Monitors QC processes, packaging validations, and inspection progress in real time to ensure product conformity.", technologies: ["Power BI", "SQL Server", "SSIS", "SAP"], images: [] },
-    { title: "Finance Forecasting Dashboard", company: "OZEOL – Tunisia", description: "Predicts weekly payment needs and optimizes cash flow via automated Power BI forecasting models.", technologies: ["Power BI", "SQL Server", "SSIS", "Excel"], images: [] },
-    { title: "SSIS ETL Jobs Monitoring Dashboard", company: "OZEOL – Tunisia", description: "Power BI dashboard tracking ETL job success/failure rates across servers, improving reliability.", technologies: ["Power BI", "SQL Server", "SSIS"], images: [] },
-    { title: "Industrial Cost Dashboard", company: "CSM-GIAS – Tunisia", description: "Analyzes cost per product, material, and semi-finished component, helping optimize production efficiency.", technologies: ["Power BI", "SQL Server", "SSIS", "SSRS", "Sage X3"], images: [] },
-    { title: "HR Dashboard", company: "CSM-GIAS – Tunisia", description: "Monitors workforce data (gender, seniority, contracts, social funds) across four entities.", technologies: ["Power BI", "SQL Server", "SSIS", "Sage X3"], images: [] },
-    { title: "ETL Automation Jobs – SSIS Performance Dashboard", company: "CSM-GIAS – Tunisia", description: "Visualizes job durations and error frequencies to enhance SSIS performance.", technologies: ["Power BI", "SQL Server", "SSIS"], images: [] },
-    { title: "Football Players Catalogue Dashboard", company: "MIRSPORT – Dubai", description: "Aggregates player data from Transfermarkt and Instat to visualize performance and market value for scouting.", technologies: ["Power BI", "Python", "SQL Server"], images: [] },
-    { title: "AFCON Insights Dashboard", company: "MIRSPORT – Dubai", description: "Analyzes Africa Cup of Nations data — team performance, best XI, and match analytics.", technologies: ["Power BI", "Python", "Excel"], images: [] },
-    { title: "Digital Transformation – BI Implementation", company: "Amsons Group / Camel Cement – Tanzania", description: "Led data modernization by building SSIS pipelines (Staging → ODS → DWH) and deploying Power BI dashboards for Sales, Purchasing, and Production.", technologies: ["Power BI", "SQL Server", "SSIS", "Excel"], images: [] }
+    // All other projects: empty images → safe
+    ...Array(11).fill(null).map((_, i) => i + 1).map(i => ({
+        title: `Project ${i + 1}`,
+        company: "Company",
+        description: "Description",
+        technologies: ["Power BI"],
+        images: []
+    }))
 ];
 
-// Modal Elements
+// Modal Elements (with safety checks)
 const modal = document.getElementById('project-modal');
 const closeBtn = document.getElementById('modal-close');
 const modalTitle = document.getElementById('modal-title');
@@ -66,39 +65,59 @@ const modalTechs = document.getElementById('modal-technologies');
 const mainImage = document.getElementById('modal-main-image');
 const thumbnailsContainer = document.getElementById('modal-thumbnails');
 
-// Open Modal + Build Gallery
+if (!modal || !closeBtn || !mainImage || !thumbnailsContainer) {
+    console.error("Modal elements missing! Check HTML IDs.");
+}
+
+// =============== OPEN MODAL ON CARD CLICK ===============
 document.querySelectorAll('.portfolio-card').forEach((card, index) => {
+    if (index >= projectData.length) {
+        console.warn(`Card ${index} has no data!`);
+        return;
+    }
+
     card.addEventListener('click', () => {
+        console.log(`Opening modal for project ${index}`); // DEBUG
+
         const p = projectData[index];
 
-        modalTitle.textContent = p.title;
-        modalCompany.textContent = p.company;
-        modalDesc.innerHTML = `<p>${p.description}</p>`;
-        modalTechs.innerHTML = p.technologies.map(t => `<span class="project-tech"><span>${t}</span></span>`).join('');
+        // Fill content
+        if (modalTitle) modalTitle.textContent = p.title;
+        if (modalCompany) modalCompany.textContent = p.company;
+        if (modalDesc) modalDesc.innerHTML = `<p>${p.description}</p>`;
+        if (modalTechs) modalTechs.innerHTML = p.technologies.map(t => `<span class="project-tech"><span>${t}</span></span>`).join('');
 
-        // Clear
+        // Clear gallery
         thumbnailsContainer.innerHTML = '';
         mainImage.classList.remove('zoomed');
+        mainImage.src = 'https://via.placeholder.com/800x600/cccccc/666666?text=Loading...';
 
         // Build gallery
-        if (p.images.length > 0) {
+        if (p.images && p.images.length > 0) {
             p.images.forEach((imgPath, i) => {
                 const fullPath = `images/${imgPath}`;
-                const thumb = document.createElement('img');
-                thumb.src = fullPath;
-                thumb.alt = `Screenshot ${i + 1}`;
-                thumb.className = 'thumbnail';
-                if (i === 0) {
-                    thumb.classList.add('active');
-                    mainImage.src = fullPath;
-                }
-                thumb.addEventListener('click', () => {
-                    mainImage.src = fullPath;
-                    thumbnailsContainer.querySelectorAll('.thumbnail').forEach(t => t.classList.remove('active'));
-                    thumb.classList.add('active');
-                    mainImage.classList.remove('zoomed');
-                });
-                thumbnailsContainer.appendChild(thumb);
+                const img = new Image();
+                img.onload = () => {
+                    const thumb = document.createElement('img');
+                    thumb.src = fullPath;
+                    thumb.alt = `Screenshot ${i + 1}`;
+                    thumb.className = 'thumbnail';
+                    if (i === 0) {
+                        thumb.classList.add('active');
+                        mainImage.src = fullPath;
+                    }
+                    thumb.addEventListener('click', () => {
+                        mainImage.src = fullPath;
+                        thumbnailsContainer.querySelectorAll('.thumbnail').forEach(t => t.classList.remove('active'));
+                        thumb.classList.add('active');
+                        mainImage.classList.remove('zoomed');
+                    });
+                    thumbnailsContainer.appendChild(thumb);
+                };
+                img.onerror = () => {
+                    console.warn(`Image not found: ${fullPath}`);
+                };
+                img.src = fullPath;
             });
         } else {
             mainImage.src = 'https://via.placeholder.com/800x600/eeeeee/999999?text=No+Images+Yet';
@@ -113,15 +132,22 @@ document.querySelectorAll('.portfolio-card').forEach((card, index) => {
 });
 
 // Zoom
-mainImage.addEventListener('click', () => mainImage.classList.toggle('zoomed'));
+mainImage.addEventListener('click', () => {
+    mainImage.classList.toggle('zoomed');
+});
 
-// Close
+// Close modal
 closeBtn.addEventListener('click', () => modal.classList.remove('active'));
-modal.addEventListener('click', e => { if (e.target === modal) modal.classList.remove('active'); });
+modal.addEventListener('click', e => {
+    if (e.target === modal) modal.classList.remove('active');
+});
 
 // Contact Form
-document.getElementById('contact-form').addEventListener('submit', e => {
-    e.preventDefault();
-    alert('Message sent! (Demo mode)');
-    e.target.reset();
-});
+const form = document.getElementById('contact-form');
+if (form) {
+    form.addEventListener('submit', e => {
+        e.preventDefault();
+        alert('Message sent! (Demo mode)');
+        form.reset();
+    });
+}
