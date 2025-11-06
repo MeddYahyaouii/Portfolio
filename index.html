@@ -293,31 +293,30 @@
             <div class="portfolio-grid">
 
                 <!-- ==================== PROJECT 0 – TAB GALLERY ==================== -->
-                <div class="glass-card card portfolio-card" data-project="0">
-                    <img src="images/project-0.png" alt="Flow Drive Dashboard" class="project-image">
-                    <span class="project-category">Operations</span>
-                    <h3>Flow Drive Dashboard</h3>
-                    <p class="project-company">OZEOL – Tunisia (2025)</p>
-                    <p class="project-description">Real-time Power BI solution tracking booking, invoicing, and logistics KPIs across departments.</p>
-                    <div class="project-tech">
-                        <span>Power BI</span>
-                        <span>SQL Server</span>
-                        <span>SSIS</span>
-                        <span class="tech-more">+2</span>
-                    </div>
+<!-- PROJECT 0 – TAB GALLERY INSIDE CARD -->
+<div class="glass-card card portfolio-card" data-project="0">
+    <img src="images/project-0.png" alt="Flow Drive Dashboard" class="project-image">
+    <span class="project-category">Operations</span>
+    <h3>Flow Drive Dashboard</h3>
+    <p class="project-company">OZEOL – Tunisia (2025)</p>
+    <p class="project-description">Real-time Power BI solution tracking booking, invoicing, and logistics KPIs across departments.</p>
+    <div class="project-tech">
+        <span>Power BI</span>
+        <span>SQL Server</span>
+        <span>SSIS</span>
+        <span class="tech-more">+2</span>
+    </div>
 
-                    <!-- TAB GALLERY (hidden until click) -->
-                    <div id="tab-gallery-0" class="tab-gallery" style="display:none;">
-                        <div class="row" id="gallery-row-0"></div>
-
-                        <!-- Expanded image container -->
-                        <div class="container" id="expanded-container-0">
-                            <span class="closebtn" onclick="closeExpanded(0)">×</span>
-                            <img id="expandedImg-0" style="width:100%">
-                            <div id="imgtext-0"></div>
-                        </div>
-                    </div>
-                </div>
+    <!-- GALLERY INSIDE CARD (hidden) -->
+    <div id="tab-gallery-0" class="tab-gallery" style="display:none; margin-top: 1.5rem;">
+        <div class="row" id="gallery-row-0"></div>
+        <div class="container" id="expanded-container-0">
+            <span class="closebtn" onclick="closeExpanded(0)">X</span>
+            <img id="expandedImg-0" style="width:100%">
+            <div id="imgtext-0"></div>
+        </div>
+    </div>
+</div>
 
                 <!-- ==================== PROJECT 1 (uses modal) ==================== -->
                 <div class="glass-card card portfolio-card" data-project="1">
