@@ -292,8 +292,7 @@
             <p class="section-subtitle">12 enterprise-grade BI solutions delivered across multiple industries</p>
             <div class="portfolio-grid">
 
-                <!-- ==================== PROJECT 0 – TAB GALLERY ==================== -->
-<!-- PROJECT 0 – TAB GALLERY INSIDE CARD -->
+<!-- PROJECT 0 – TAB GALLERY (INSIDE CARD) -->
 <div class="glass-card card portfolio-card" data-project="0">
     <img src="images/project-0.png" alt="Flow Drive Dashboard" class="project-image">
     <span class="project-category">Operations</span>
@@ -307,13 +306,13 @@
         <span class="tech-more">+2</span>
     </div>
 
-    <!-- GALLERY INSIDE CARD (hidden) -->
-    <div id="tab-gallery-0" class="tab-gallery" style="display:none; margin-top: 1.5rem;">
+    <!-- GALLERY (hidden until click) -->
+    <div id="tab-gallery-0" class="tab-gallery" style="display:none; margin-top:1.5rem;">
         <div class="row" id="gallery-row-0"></div>
-        <div class="container" id="expanded-container-0">
-            <span class="closebtn" onclick="closeExpanded(0)">X</span>
-            <img id="expandedImg-0" style="width:100%">
-            <div id="imgtext-0"></div>
+        <div class="container" id="expanded-container-0" style="display:none;">
+            <span class="closebtn" onclick="closeGallery(0)">X</span>
+            <img id="expandedImg-0" style="max-width:90%; max-height:75vh; border-radius:12px;">
+            <div id="imgtext-0" style="margin-top:1rem; color:white; font-size:1.1rem;"></div>
         </div>
     </div>
 </div>
