@@ -1,109 +1,137 @@
+<!-- index.html FULL CODE -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>Mohamed Yahyaoui | BI Developer</title>
-    <link rel="stylesheet" href="style.css" />
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mohamed Yahyaoui | Business Intelligence Engineer</title>
+    <meta name="description" content="Business Intelligence Engineer with 4+ years of experience in Power BI, SQL, and ETL Development. Transforming data into strategic insights.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@600;700;800&display=swap" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Lucide Icons (CDN) -->
+    <script src="https://unpkg.com/lucide@latest"></script>
 </head>
 <body>
-
-    <!-- Scroll Progress -->
+    <!-- Scroll Progress Bar -->
     <div id="scroll-progress"></div>
 
-    <!-- Navbar -->
+    <!-- Navigation -->
     <nav id="navbar">
-        <div class="container nav-content">
-            <a href="#" class="logo">MY</a>
-            <div class="nav-links">
+        <div class="container">
+            <div class="nav-content">
+                <a href="#home" class="logo">MY</a>
+
+                <div class="nav-links" id="nav-links">
+                    <a href="#home">Home</a>
+                    <a href="#about">About</a>
+                    <a href="#experience">Experience</a>
+                    <a href="#skills">Skills</a>
+                    <a href="#services">Services</a>
+                    <a href="#portfolio">Portfolio</a>
+                    <a href="#contact">Contact</a>
+                </div>
+
+                <button class="mobile-menu-btn" id="mobile-menu-btn">
+                    <i data-lucide="menu"></i>
+                </button>
+            </div>
+
+            <div class="mobile-menu" id="mobile-menu">
                 <a href="#home">Home</a>
                 <a href="#about">About</a>
                 <a href="#experience">Experience</a>
                 <a href="#skills">Skills</a>
+                <a href="#services">Services</a>
                 <a href="#portfolio">Portfolio</a>
                 <a href="#contact">Contact</a>
             </div>
-            <button class="mobile-menu-btn" aria-label="Toggle menu">
-                <i data-lucide="menu"></i>
-            </button>
-        </div>
-        <div class="mobile-menu">
-            <a href="#home">Home</a>
-            <a href="#about">About</a>
-            <a href="#experience">Experience</a>
-            <a href="#skills">Skills</a>
-            <a href="#portfolio">Portfolio</a>
-            <a href="#contact">Contact</a>
         </div>
     </nav>
 
+    <!-- Floating Contact Button -->
+    <a href="#contact" class="floating-contact" title="Contact Me">
+        <i data-lucide="mail"></i>
+    </a>
+
     <!-- Hero Section -->
-    <section id="home" class="hero-section section">
+    <section id="home" class="hero-section">
         <div class="grid-pattern"></div>
         <div class="bg-blob bg-blob-1"></div>
         <div class="bg-blob bg-blob-2"></div>
-        <div class="container hero-grid">
-            <div class="hero-image">
-                <div class="image-glow"></div>
-                <img src="images/profile.png" alt="Mohamed Yahyaoui" />
-            </div>
-            <div class="hero-content">
-                <p class="hero-greeting">Hello, I'm</p>
-                <h1 class="hero-title gradient-text">Mohamed Yahyaoui</h1>
-                <p class="hero-subtitle">Business Intelligence Developer</p>
-                <p class="hero-role">Power BI | SQL | SSIS | ETL | Data Architecture</p>
-                <p class="hero-description">
-                    Transforming raw data into strategic insights. I design scalable BI solutions that drive decisions.
-                </p>
-                <p class="hero-tagline">“Data is the new oil — I build the refinery.”</p>
-                <div class="hero-buttons">
-                    <a href="#contact" class="btn btn-primary">
-                        <i data-lucide="mail"></i> Get in Touch
-                    </a>
-                    <a href="https://www.linkedin.com/in/mohamed--yahyaoui/" target="_blank" class="btn btn-outline">
-                        <i data-lucide="linkedin"></i> LinkedIn
-                    </a>
-                </div>
-                <div class="social-links">
-                    <a href="https://www.linkedin.com/in/mohamed--yahyaoui/" target="_blank"><i data-lucide="linkedin"></i></a>
-                    <a href="mailto:mohamed.yahyaoui@example.com"><i data-lucide="mail"></i></a>
-                </div>
-            </div>
-        </div>
 
-        <!-- Stats -->
-        <div class="container stats-grid">
-            <div class="glass-card card stat-card">
-                <div class="stat-value">12+</div>
-                <div class="stat-label">Projects Delivered</div>
+        <div class="container">
+            <div class="hero-grid">
+                <div class="hero-image animate-fade-in">
+                    <div class="image-glow"></div>
+                    <img src="images/profile-photo.png" alt="Mohamed Yahyaoui">
+                </div>
+
+                <div class="hero-content animate-fade-in-up">
+                    <p class="hero-greeting">Hello, I'm</p>
+                    <h1 class="hero-title">Mohamed Yahyaoui</h1>
+                    <p class="hero-subtitle">Business Intelligence Engineer</p>
+                    <p class="hero-role">Power BI & Data Analytics Expert</p>
+
+                    <p class="hero-description">
+                        Engineer in Business Intelligence with 4 years of experience turning raw data into strategic insights through Power BI, SQL, and SSIS.
+                    </p>
+                    <p class="hero-tagline">"Where data precision meets visual design."</p>
+
+                    <div class="hero-buttons">
+                        <a href="#portfolio" class="btn btn-primary">View My Work</a>
+                        <a href="#contact" class="btn btn-outline">
+                            <i data-lucide="mail"></i> Contact Me
+                        </a>
+                    </div>
+
+                    <div class="social-links">
+                        <a href="https://www.linkedin.com/in/mohamed--yahyaoui/" target="_blank"><i data-lucide="linkedin"></i></a>
+                        <a href="https://novypro.com" target="_blank"><i data-lucide="external-link"></i></a>
+                    </div>
+                </div>
             </div>
-            <div class="glass-card card stat-card">
-                <div class="stat-value">5+</div>
-                <div class="stat-label">Years Experience</div>
-            </div>
-            <div class="glass-card card stat-card">
-                <div class="stat-value">3</div>
-                <div class="stat-label">Industries Served</div>
+
+            <div class="stats-grid">
+                <div class="stat-card glass-card">
+                    <p class="stat-value">4+</p>
+                    <p class="stat-label">Years Experience</p>
+                </div>
+                <div class="stat-card glass-card">
+                    <p class="stat-value">25+</p>
+                    <p class="stat-label">BI Dashboards Delivered</p>
+                </div>
+                <div class="stat-card glass-card">
+                    <p class="stat-value">PL-300</p>
+                    <p class="stat-label">Microsoft Certified</p>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- About Section -->
     <section id="about" class="section">
+        <div class="grid-pattern"></div>
         <div class="container">
             <h2 class="section-title gradient-text">About Me</h2>
-            <p class="section-subtitle">From data chaos to clarity — I architect BI systems that scale.</p>
             <div class="about-content">
+                <div class="glass-card card">
+                    <p>Mohamed Yahyaoui is a Business Intelligence Engineer whose journey merges data analysis and graphic design. His hybrid background allows him to transform data into visually engaging, insight-driven dashboards that enhance business decision-making.</p>
+                </div>
+
                 <div class="glass-card card education-card">
                     <div class="card-icon"><i data-lucide="graduation-cap"></i></div>
                     <div class="card-content">
-                        <h3>Master's in Business Intelligence</h3>
-                        <p class="education-degree">Data Engineering & Analytics</p>
-                        <p class="education-school">ESPRIT – Tunis, Tunisia</p>
-                        <p class="education-major">Specialized in ETL, DWH, and Power BI</p>
-                        <p class="education-period">2018 – 2020</p>
+                        <h3>Education</h3>
+                        <p class="education-degree">Engineer Diploma (Bac +5)</p>
+                        <p class="education-school">ESPRIT - Private Higher School of Engineering and Technology</p>
+                        <p class="education-major">Major: Computer Science</p>
+                        <p class="education-period">2017 – 2022</p>
                     </div>
                 </div>
             </div>
@@ -114,47 +142,37 @@
     <section id="experience" class="section">
         <div class="container">
             <h2 class="section-title gradient-text">Experience</h2>
-            <p class="section-subtitle">Building enterprise BI solutions across industries</p>
             <div class="experience-list">
-                <!-- BI Developer -->
                 <div class="glass-card card experience-card">
                     <div class="card-icon"><i data-lucide="briefcase"></i></div>
                     <div class="card-content">
                         <div class="experience-header">
                             <h3>BI Developer</h3>
-                            <span class="experience-period">
-                                <i data-lucide="calendar"></i> 2025 – Present
-                            </span>
+                            <span class="experience-period"><i data-lucide="calendar"></i>2025 – Present</span>
                         </div>
                         <p class="experience-company">OZEOL</p>
                         <p class="experience-description">Structuring BI architecture (Staging, ODS, DWH) and migrating Excel/Cognos reporting to Power BI.</p>
                     </div>
                 </div>
 
-                <!-- BI Engineer -->
                 <div class="glass-card card experience-card">
                     <div class="card-icon"><i data-lucide="briefcase"></i></div>
                     <div class="card-content">
                         <div class="experience-header">
                             <h3>BI Engineer</h3>
-                            <span class="experience-period">
-                                <i data-lucide="calendar"></i> 2023 – 2024
-                            </span>
+                            <span class="experience-period"><i data-lucide="calendar"></i>2023 – 2024</span>
                         </div>
                         <p class="experience-company">CSM-GIAS (Groupe Slama)</p>
                         <p class="experience-description">Integrated Power BI into IT workflows, created analytical dashboards, and managed SSIS pipelines.</p>
                     </div>
                 </div>
 
-                <!-- BI Consultant -->
                 <div class="glass-card card experience-card">
                     <div class="card-icon"><i data-lucide="briefcase"></i></div>
                     <div class="card-content">
                         <div class="experience-header">
                             <h3>BI Consultant</h3>
-                            <span class="experience-period">
-                                <i data-lucide="calendar"></i> 2021 – 2023
-                            </span>
+                            <span class="experience-period"><i data-lucide="calendar"></i>2021 – 2023</span>
                         </div>
                         <p class="experience-company">Freelance</p>
                         <p class="experience-description">Delivered Power BI and ETL solutions for clients in Dubai and Tanzania.</p>
@@ -166,33 +184,97 @@
 
     <!-- Skills Section -->
     <section id="skills" class="section">
+        <div class="grid-pattern"></div>
         <div class="container">
-            <h2 class="section-title gradient-text">Skills</h2>
-            <p class="section-subtitle">Tools and technologies I master</p>
+            <h2 class="section-title gradient-text">Skills & Expertise</h2>
             <div class="skills-grid">
                 <div class="glass-card card skill-card">
-                    <h3>Business Intelligence</h3>
+                    <div class="card-icon"><i data-lucide="bar-chart-3"></i></div>
+                    <h3>Power BI</h3>
                     <ul>
-                        <li>Power BI (DAX, M, Modeling)</li>
-                        <li>Cognos Analytics</li>
-                        <li>Tableau</li>
+                        <li>DAX</li>
+                        <li>Data Modeling</li>
+                        <li>Power Query</li>
+                        <li>KPI Creation</li>
                     </ul>
                 </div>
                 <div class="glass-card card skill-card">
-                    <h3>Data Engineering</h3>
+                    <div class="card-icon"><i data-lucide="database"></i></div>
+                    <h3>SQL / T-SQL</h3>
                     <ul>
-                        <li>SQL Server (T-SQL)</li>
-                        <li>SSIS (ETL)</li>
-                        <li>Python (Pandas, PyODBC)</li>
+                        <li>Query Optimization</li>
+                        <li>Stored Procedures</li>
+                        <li>Database Management</li>
                     </ul>
                 </div>
                 <div class="glass-card card skill-card">
+                    <div class="card-icon"><i data-lucide="git-branch"></i></div>
+                    <h3>SSIS</h3>
+                    <ul>
+                        <li>ETL Development</li>
+                        <li>Job Automation</li>
+                        <li>Data Integration</li>
+                    </ul>
+                </div>
+                <div class="glass-card card skill-card">
+                    <div class="card-icon"><i data-lucide="layers"></i></div>
                     <h3>Data Architecture</h3>
                     <ul>
-                        <li>Data Warehouse (Kimball)</li>
-                        <li>Staging & ODS Design</li>
-                        <li>Star Schema</li>
+                        <li>Staging → ODS → DWH</li>
+                        <li>Data Warehouse Design</li>
                     </ul>
+                </div>
+                <div class="glass-card card skill-card">
+                    <div class="card-icon"><i data-lucide="code"></i></div>
+                    <h3>Programming</h3>
+                    <ul>
+                        <li>Python</li>
+                        <li>Automation</li>
+                        <li>Web Scraping</li>
+                    </ul>
+                </div>
+                <div class="glass-card card skill-card">
+                    <div class="card-icon"><i data-lucide="brain"></i></div>
+                    <h3>Business Intelligence</h3>
+                    <ul>
+                        <li>Dashboard Design</li>
+                        <li>Data Storytelling</li>
+                        <li>Business Analysis</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="section">
+        <div class="container">
+            <h2 class="section-title gradient-text">Services</h2>
+            <div class="services-grid">
+                <div class="glass-card card service-card">
+                    <div class="card-icon"><i data-lucide="line-chart"></i></div>
+                    <h3>BI Consulting</h3>
+                    <p>Building scalable data architectures tailored to your business needs.</p>
+                </div>
+                <div class="glass-card card service-card">
+                    <div class="card-icon"><i data-lucide="palette"></i></div>
+                    <h3>Dashboard Design & Visualization</h3>
+                    <p>Creating interactive KPI dashboards that tell your data story.</p>
+                </div>
+                <div class="glass-card card service-card">
+                    <div class="card-icon"><i data-lucide="git-branch"></i></div>
+                    <h3>ETL Development (SSIS)</h3>
+                    <p>Automating and optimizing data pipelines for efficient data flow.</p>
+                </div>
+                <div class="glass-card card service-card">
+                    <div class="card-icon"><i data-lucide="rocket"></i></div>
+                    <h3>Power BI Implementation & Migration</h3>
+                    <p>Transitioning legacy systems to modern analytics platforms.</p>
+                </div>
+                <div class="glass-card card service-card">
+                    <div class="card-icon"><i data-lucide="graduation-cap"></i></div>
+                    <h3>Power BI Training</h3>
+                    <p>Upskilling teams in data visualization and reporting best practices.</p>
                 </div>
             </div>
         </div>
@@ -205,9 +287,8 @@
             <h2 class="section-title gradient-text">Portfolio</h2>
             <p class="section-subtitle">12 enterprise-grade BI solutions delivered across multiple industries</p>
             <div class="portfolio-grid">
-                <!-- Project 0 -->
                 <div class="glass-card card portfolio-card" data-project="0">
-                    <img src="images/project-0.jpg" alt="Flow Drive Dashboard" class="project-image">
+                    <img src="images/project-0.png" alt="Flow Drive Dashboard" class="project-image">
                     <span class="project-category">Operations</span>
                     <h3>Flow Drive Dashboard</h3>
                     <p class="project-company">OZEOL – Tunisia</p>
@@ -219,10 +300,8 @@
                         <span class="tech-more">+2</span>
                     </div>
                 </div>
-
-                <!-- Project 1 -->
                 <div class="glass-card card portfolio-card" data-project="1">
-                    <img src="images/project-1.jpg" alt="Management Dashboard" class="project-image">
+                    <img src="images/project-1.png" alt="Instance 6 – BUM SC & ZM SC Dashboard" class="project-image">
                     <span class="project-category">Management</span>
                     <h3>Instance 6 – BUM SC & ZM SC Dashboard</h3>
                     <p class="project-company">OZEOL – Tunisia</p>
@@ -234,10 +313,8 @@
                         <span class="tech-more">+1</span>
                     </div>
                 </div>
-
-                <!-- Project 2 -->
                 <div class="glass-card card portfolio-card" data-project="2">
-                    <img src="images/project-2.jpg" alt="Supply Chain Dashboard" class="project-image">
+                    <img src="images/project-2.png" alt="Instance 4 – BUM SC & Team Dashboard" class="project-image">
                     <span class="project-category">Supply Chain</span>
                     <h3>Instance 4 – BUM SC & Team Dashboard</h3>
                     <p class="project-company">OZEOL – Tunisia</p>
@@ -249,10 +326,8 @@
                         <span class="tech-more">+1</span>
                     </div>
                 </div>
-
-                <!-- Project 3 -->
                 <div class="glass-card card portfolio-card" data-project="3">
-                    <img src="images/project-3.jpg" alt="Quality Control Dashboard" class="project-image">
+                    <img src="images/project-3.png" alt="Quality Control – Supply Chain Live Dashboard" class="project-image">
                     <span class="project-category">Quality</span>
                     <h3>Quality Control – Supply Chain Live Dashboard</h3>
                     <p class="project-company">OZEOL – Tunisia</p>
@@ -264,10 +339,8 @@
                         <span class="tech-more">+1</span>
                     </div>
                 </div>
-
-                <!-- Project 4 -->
                 <div class="glass-card card portfolio-card" data-project="4">
-                    <img src="images/project-4.jpg" alt="Finance Forecasting Dashboard" class="project-image">
+                    <img src="images/project-4.png" alt="Finance Forecasting Dashboard" class="project-image">
                     <span class="project-category">Finance</span>
                     <h3>Finance Forecasting Dashboard</h3>
                     <p class="project-company">OZEOL – Tunisia</p>
@@ -279,10 +352,8 @@
                         <span class="tech-more">+1</span>
                     </div>
                 </div>
-
-                <!-- Project 5 -->
                 <div class="glass-card card portfolio-card" data-project="5">
-                    <img src="images/project-5.jpg" alt="ETL Jobs Monitoring Dashboard" class="project-image">
+                    <img src="images/project-5.png" alt="SSIS ETL Jobs Monitoring Dashboard" class="project-image">
                     <span class="project-category">Infrastructure</span>
                     <h3>SSIS ETL Jobs Monitoring Dashboard</h3>
                     <p class="project-company">OZEOL – Tunisia</p>
@@ -293,10 +364,8 @@
                         <span>SSIS</span>
                     </div>
                 </div>
-
-                <!-- Project 6 -->
                 <div class="glass-card card portfolio-card" data-project="6">
-                    <img src="images/project-6.jpg" alt="Industrial Cost Dashboard" class="project-image">
+                    <img src="images/project-6.png" alt="Industrial Cost Dashboard" class="project-image">
                     <span class="project-category">Manufacturing</span>
                     <h3>Industrial Cost Dashboard</h3>
                     <p class="project-company">CSM-GIAS – Tunisia</p>
@@ -308,10 +377,8 @@
                         <span class="tech-more">+2</span>
                     </div>
                 </div>
-
-                <!-- Project 7 -->
                 <div class="glass-card card portfolio-card" data-project="7">
-                    <img src="images/project-7.jpg" alt="HR Dashboard" class="project-image">
+                    <img src="images/project-7.png" alt="HR Dashboard" class="project-image">
                     <span class="project-category">Human Resources</span>
                     <h3>HR Dashboard</h3>
                     <p class="project-company">CSM-GIAS – Tunisia</p>
@@ -323,10 +390,8 @@
                         <span class="tech-more">+1</span>
                     </div>
                 </div>
-
-                <!-- Project 8 -->
                 <div class="glass-card card portfolio-card" data-project="8">
-                    <img src="images/project-8.jpg" alt="ETL Performance Dashboard" class="project-image">
+                    <img src="images/project-8.png" alt="ETL Automation Jobs – SSIS Performance Dashboard" class="project-image">
                     <span class="project-category">Infrastructure</span>
                     <h3>ETL Automation Jobs – SSIS Performance Dashboard</h3>
                     <p class="project-company">CSM-GIAS – Tunisia</p>
@@ -337,10 +402,8 @@
                         <span>SSIS</span>
                     </div>
                 </div>
-
-                <!-- Project 9 -->
                 <div class="glass-card card portfolio-card" data-project="9">
-                    <img src="images/project-9.jpg" alt="Football Players Catalogue Dashboard" class="project-image">
+                    <img src="images/project-9.png" alt="Football Players Catalogue Dashboard" class="project-image">
                     <span class="project-category">Sports Analytics</span>
                     <h3>Football Players Catalogue Dashboard</h3>
                     <p class="project-company">MIRSPORT – Dubai</p>
@@ -351,10 +414,8 @@
                         <span>SQL Server</span>
                     </div>
                 </div>
-
-                <!-- Project 10 -->
                 <div class="glass-card card portfolio-card" data-project="10">
-                    <img src="images/project-10.jpg" alt="AFCON Insights Dashboard" class="project-image">
+                    <img src="images/project-10.png" alt="AFCON Insights Dashboard" class="project-image">
                     <span class="project-category">Sports Analytics</span>
                     <h3>AFCON Insights Dashboard</h3>
                     <p class="project-company">MIRSPORT – Dubai</p>
@@ -365,10 +426,8 @@
                         <span>Excel</span>
                     </div>
                 </div>
-
-                <!-- Project 11 -->
                 <div class="glass-card card portfolio-card" data-project="11">
-                    <img src="images/project-11.jpg" alt="Digital Transformation BI Implementation" class="project-image">
+                    <img src="images/project-11.png" alt="Digital Transformation – BI Implementation" class="project-image">
                     <span class="project-category">Enterprise</span>
                     <h3>Digital Transformation – BI Implementation</h3>
                     <p class="project-company">Amsons Group / Camel Cement – Tanzania</p>
@@ -386,49 +445,64 @@
 
     <!-- Contact Section -->
     <section id="contact" class="section">
-        <div class="container contact-grid">
-            <div class="contact-info">
-                <h3>Connect With Me</h3>
-                <div class="contact-item">
-                    <div class="contact-icon"><i data-lucide="mail"></i></div>
-                    <div>
-                        <div class="contact-label">Email</div>
-                        <a href="mailto:mohamed.yahyaoui@example.com">mohamed.yahyaoui@example.com</a>
+        <div class="container">
+            <h2 class="section-title gradient-text">Get In Touch</h2>
+            <p class="section-subtitle">Have a project in mind or want to discuss BI solutions? Feel free to reach out!</p>
+            <div class="contact-grid">
+                <div class="glass-card card contact-info">
+                    <h3>Contact Details</h3>
+                    <div class="contact-item">
+                        <div class="contact-icon"><i data-lucide="mail"></i></div>
+                        <div>
+                            <p class="contact-label">Email</p>
+                            <a href="mailto:meddyahyaouii@gmail.com">meddyahyaouii@gmail.com</a>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon"><i data-lucide="phone"></i></div>
+                        <div>
+                            <p class="contact-label">Phone</p>
+                            <a href="tel:+21624628358">+216 24 628 358</a>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon"><i data-lucide="map-pin"></i></div>
+                        <div>
+                            <p class="contact-label">Location</p>
+                            <p>Beni Khiar, Nabeul – Tunisia</p>
+                        </div>
+                    </div>
+                    <div class="contact-social">
+                        <h4>Connect With Me</h4>
+                        <div class="social-links">
+                            <a href="https://www.linkedin.com/in/mohamed--yahyaoui/" target="_blank"><i data-lucide="linkedin"></i> LinkedIn</a>
+                            <a href="https://novypro.com" target="_blank"><i data-lucide="external-link"></i> NovyPro</a>
+                        </div>
                     </div>
                 </div>
-                <div class="contact-item">
-                    <div class="contact-icon"><i data-lucide="linkedin"></i></div>
-                    <div>
-                        <div class="contact-label">LinkedIn</div>
-                        <a href="https://www.linkedin.com/in/mohamed--yahyaoui/" target="_blank">linkedin.com/in/mohamed--yahyaoui</a>
+
+                <form id="contact-form" class="glass-card card contact-form">
+                    <div class="form-group">
+                        <label for="name">Name *</label>
+                        <input type="text" id="name" required placeholder="Your name">
                     </div>
-                </div>
-                <div class="contact-social">
-                    <h4>Follow</h4>
-                    <div class="social-links">
-                        <a href="https://www.linkedin.com/in/mohamed--yahyaoui/" target="_blank">
-                            <i data-lucide="linkedin"></i> LinkedIn
-                        </a>
+                    <div class="form-group">
+                        <label for="email">Email *</label>
+                        <input type="email" id="email" required placeholder="your.email@example.com">
                     </div>
-                </div>
+                    <div class="form-group">
+                        <label for="subject">Subject</label>
+                        <input type="text" id="subject" placeholder="What's this about?">
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message *</label>
+                        <textarea id="message" rows="5" required placeholder="Tell me about your project..."></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-full">
+                        <i data-lucide="send"></i> Send Message
+                    </button>
+                </form>
             </div>
-            <form class="contact-form glass-card card">
-                <div class="form-group">
-                    <label for="name">Name</label>
-                    <input type="text" id="name" required />
-                </div>
-                <div class="form-group">
-                    <label for="email">Email</label>
-                    <input type="email" id="email" required />
-                </div>
-                <div class="form-group">
-                    <label for="message">Message</label>
-                    <textarea id="message" rows="5" required></textarea>
-                </div>
-                <button type="submit" class="btn btn-primary btn-full">
-                    <i data-lucide="send"></i> Send Message
-                </button>
-            </form>
         </div>
     </section>
 
@@ -442,93 +516,15 @@
     <!-- Modal -->
     <div id="project-modal" class="modal">
         <div class="modal-content">
-            <button class="modal-close">&times;</button>
-            <h3 id="modal-title"></h3>
+            <button class="modal-close" id="modal-close">x</button>
+            <h2 id="modal-title"></h2>
             <p id="modal-company"></p>
-            <p id="modal-description"></p>
-            <div id="modal-technologies" class="project-tech"></div>
+            <div id="modal-description"></div>
+            <div id="modal-technologies"></div>
         </div>
     </div>
 
-    <!-- Floating Contact -->
-    <a href="#contact" class="floating-contact">
-        <i data-lucide="message-circle"></i>
-    </a>
-
-    <!-- Scripts -->
-    <script>
-        // Lucide Icons
-        lucide.createIcons();
-
-        // Project Data
-        const projectData = [
-            { title: "Flow Drive Dashboard", company: "OZEOL – Tunisia", description: "Real-time Power BI solution tracking booking, invoicing, and logistics KPIs across departments.", tech: ["Power BI", "SQL Server", "SSIS", "DAX", "Power Query"] },
-            { title: "Instance 6 – BUM SC & ZM SC Dashboard", company: "OZEOL – Tunisia", description: "Provides Business Unit and Zone Managers with KPIs on billing, transport, and container rates.", tech: ["Power BI", "SQL Server", "SSIS", "DAX"] },
-            { title: "Instance 4 – BUM SC & Team Dashboard", company: "OZEOL – Tunisia", description: "Consolidates turnover, logistics, and disputes KPIs for supply chain managers.", tech: ["Power BI", "SQL Server", "SSIS", "DAX"] },
-            { title: "Quality Control – Supply Chain Live Dashboard", company: "OZEOL – Tunisia", description: "Monitors QC processes, packaging validations, and inspection progress in real time.", tech: ["Power BI", "SQL Server", "SSIS", "DAX"] },
-            { title: "Finance Forecasting Dashboard", company: "OZEOL – Tunisia", description: "Predicts weekly payment needs and optimizes cash flow via automated Power BI forecasting models.", tech: ["Power BI", "SQL Server", "SSIS", "DAX"] },
-            { title: "SSIS ETL Jobs Monitoring Dashboard", company: "OZEOL – Tunisia", description: "Power BI dashboard tracking ETL job success/failure rates across servers.", tech: ["Power BI", "SQL Server", "SSIS"] },
-            { title: "Industrial Cost Dashboard", company: "CSM-GIAS – Tunisia", description: "Analyzes cost per product, material, and semi-finished component.", tech: ["Power BI", "SQL Server", "SSIS", "DAX", "Power Query"] },
-            { title: "HR Dashboard", company: "CSM-GIAS – Tunisia", description: "Monitors workforce data across four entities.", tech: ["Power BI", "SQL Server", "SSIS", "DAX"] },
-            { title: "ETL Automation Jobs – SSIS Performance Dashboard", company: "CSM-GIAS – Tunisia", description: "Visualizes job durations and error frequencies to enhance SSIS performance.", tech: ["Power BI", "SQL Server", "SSIS"] },
-            { title: "Football Players Catalogue Dashboard", company: "MIRSPORT – Dubai", description: "Aggregates player data from Transfermarkt and Instat to visualize performance.", tech: ["Power BI", "Python", "SQL Server"] },
-            { title: "AFCON Insights Dashboard", company: "MIRSPORT – Dubai", description: "Analyzes Africa Cup of Nations data — team performance, best XI, and match analytics.", tech: ["Power BI", "Python", "Excel"] },
-            { title: "Digital Transformation – BI Implementation", company: "Amsons Group / Camel Cement – Tanzania", description: "Led data modernization by building SSIS pipelines and deploying Power BI dashboards.", tech: ["Power BI", "SQL Server", "SSIS", "DAX"] }
-        ];
-
-        // Modal Logic
-        const modal = document.getElementById('project-modal');
-        const modalTitle = document.getElementById('modal-title');
-        const modalCompany = document.getElementById('modal-company');
-        const modalDesc = document.getElementById('modal-description');
-        const modalTech = document.getElementById('modal-technologies');
-        const closeBtn = document.querySelector('.modal-close');
-
-        document.querySelectorAll('.portfolio-card').forEach(card => {
-            card.addEventListener('click', () => {
-                const idx = card.dataset.project;
-                const data = projectData[idx];
-                modalTitle.textContent = data.title;
-                modalCompany.textContent = data.company;
-                modalDesc.textContent = data.description;
-                modalTech.innerHTML = '';
-                data.tech.forEach(t => {
-                    const span = document.createElement('span');
-                    span.textContent = t;
-                    modalTech.appendChild(span);
-                });
-                modal.classList.add('active');
-            });
-        });
-
-        closeBtn.addEventListener('click', () => modal.classList.remove('active'));
-        modal.addEventListener('click', e => {
-            if (e.target === modal) modal.classList.remove('active');
-        });
-
-        // Navbar Scroll
-        const navbar = document.getElementById('navbar');
-        window.addEventListener('scroll', () => {
-            navbar.classList.toggle('scrolled', window.scrollY > 50);
-        });
-
-        // Scroll Progress
-        window.addEventListener('scroll', () => {
-            const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
-            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-            const scrolled = (winScroll / height) * 100;
-            document.getElementById('scroll-progress').style.width = scrolled + '%';
-        });
-
-        // Mobile Menu
-        const menuBtn = document.querySelector('.mobile-menu-btn');
-        const mobileMenu = document.querySelector('.mobile-menu');
-        menuBtn.addEventListener('click', () => {
-            mobileMenu.classList.toggle('active');
-            const icon = menuBtn.querySelector('i');
-            icon.setAttribute('data-lucide', mobileMenu.classList.contains('active') ? 'x' : 'menu');
-            lucide.createIcons();
-        });
-    </script>
+    <!-- JS -->
+    <script src="scripts/script.js"></script>
 </body>
 </html>
