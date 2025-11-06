@@ -28,7 +28,7 @@ if (menuBtn && menu) {
 }
 
 /* -------------------------------------------------
-   TAB GALLERY – PROJECT 0 ONLY
+   TAB GALLERY – PROJECT 0 (INSIDE CARD)
    ------------------------------------------------- */
 const PROJECT_0_IMAGES = [
     "Capture d'écran 2025-10-14 105555.png",
@@ -41,10 +41,14 @@ const PROJECT_0_IMAGES = [
     "Capture d'écran 2025-10-14 105848.png"
 ];
 
+let galleryOpen = false;
+
 function openTabGallery() {
+    if (galleryOpen) return;
+    galleryOpen = true;
+
     const gallery = document.getElementById('tab-gallery-0');
     const row = document.getElementById('gallery-row-0');
-    const card = document.querySelector('.portfolio-card[data-project="0"]');
 
     row.innerHTML = '';
     PROJECT_0_IMAGES.forEach(src => {
@@ -52,18 +56,12 @@ function openTabGallery() {
         col.className = 'column';
         const img = document.createElement('img');
         img.src = `images/project-0/${src}`;
-        img.alt = src.split('.')[0].replace(/Capture d'écran /g, '');
+        img.alt = src.split('.')[0].replace(/Capture d'écran \d{4}-\d{2}-\d{2} /, '');
         img.onclick = () => expandImage(0, img);
         col.appendChild(img);
         row.appendChild(col);
     });
 
-    card.querySelector('.project-image').style.display = 'none';
-    card.querySelector('.project-category').style.display = 'none';
-    card.querySelector('h3').style.display = 'none';
-    card.querySelector('.project-company').style.display = 'none';
-    card.querySelector('.project-description').style.display = 'none';
-    card.querySelector('.project-tech').style.display = 'none';
     gallery.style.display = 'block';
 }
 
@@ -80,13 +78,13 @@ function closeExpanded(idx) {
     document.getElementById(`expanded-container-${idx}`).style.display = 'none';
 }
 
-// Open Tab Gallery on Project 0 click
+// Click card → open gallery
 document.querySelector('.portfolio-card[data-project="0"]').addEventListener('click', e => {
     e.stopPropagation();
     openTabGallery();
 });
 
-// Close expanded on outside click
+// Close on outside click
 document.querySelectorAll('.container').forEach(c => {
     c.addEventListener('click', ev => {
         if (ev.target === c) closeExpanded(0);
