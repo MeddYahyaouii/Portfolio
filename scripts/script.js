@@ -10,7 +10,7 @@ window.addEventListener('scroll', () => {
     document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 50);
 });
 
-// PROJECT DATA
+// PROJECT DATA – 21 PROJECTS (0 to 20)
 const projectData = [
     { title: "Africa Cup Of Nations (Afcon) Insights Dashboard", company: "Mir Sport Football AGENCY (Freelance, 2022–2023)", description: "The dashboard covers 4 main areas: Afcon History, Afcon 2023-2024, the 2023 Best XI, and a detailed analysis of the last final between Ivory Coast and Nigeria.", technologies: ["Power BI", "Python", "Excel"] },
     { title: "Mir Sport Football Players Catalogue", company: "Mir Sport Football AGENCY (Freelance, 2022–2023)", description: "Developed a Power BI dashboard using data from Transfermarkt. Introduces a new way to sell players with KPIs on market value and performance. Includes 4 interactive pages: player insights, agency structure, analytics, and 3D pitch view.", technologies: ["Power BI", "Python", "SQL Server"] },
@@ -45,13 +45,15 @@ const modalTech = document.getElementById('modal-technologies');
 
 document.querySelectorAll('.portfolio-card').forEach(card => {
     card.addEventListener('click', () => {
-        const i = card.getAttribute('data-project');
-        const p = projectData[i];
-        modalTitle.textContent = p.title;
-        modalCompany.textContent = p.company;
-        modalDesc.innerHTML = `<p>${p.description}</p>`;
-        modalTech.innerHTML = p.technologies.map(t => `<span class="project-tech"><span>${t}</span></span>`).join('');
-        modal.classList.add('active');
+        const i = parseInt(card.getAttribute('data-project'));
+        if (i >= 0 && i < projectData.length) {
+            const p = projectData[i];
+            modalTitle.textContent = p.title;
+            modalCompany.textContent = p.company;
+            modalDesc.innerHTML = `<p>${p.description}</p>`;
+            modalTech.innerHTML = p.technologies.map(t => `<span class="project-tech"><span>${t}</span></span>`).join('');
+            modal.classList.add('active');
+        }
     });
 });
 
