@@ -407,3 +407,34 @@ body { font-family:var(--font-body); background:hsl(var(--background)); color:hs
     border-color: hsl(var(--primary));
     transform: scale(1.12);
 }
+
+/* === CENTER ICONS IN SKILLS & SERVICES === */
+.skill-card .card-icon,
+.service-card .card-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    height: 60px;
+    background: rgba(59, 130, 246, 0.1);
+    border-radius: 50%;
+    margin: 0 auto 1rem auto;
+    transition: all 0.3s ease;
+}
+
+.skill-card .card-icon i,
+.service-card .card-icon i {
+    font-size: 1.8rem;
+    color: #3b82f6;
+}
+
+.skill-card:hover .card-icon,
+.service-card:hover .card-icon {
+    background: #3b82f6;
+    transform: translateY(-4px);
+}
+
+.skill-card:hover .card-icon i,
+.service-card:hover .card-icon i {
+    color: white;
+}
