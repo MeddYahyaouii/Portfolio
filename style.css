@@ -1125,15 +1125,17 @@ body {
     transform: scale(1.12);
 }
 
-/* MINIATURE DU SITE (FAVICON + SOCIAL) - CSS PUR */
-head::after,
-head title::after {
-    content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%233357d4'/%3E%3Ctext x='16' y='22' font-family='Montserrat,sans-serif' font-size='18' font-weight='700' fill='%23fff' text-anchor='middle'%3EYM%3C/text%3E%3C/svg%3E");
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    opacity: 0;
-    pointer-events: none;
+/* SUPPRESSION FORCÉE DU TEXTE SOUS "PORTFOLIO" */
+nav a[href="#portfolio"]::after,
+nav a[href*="portfolio"]::after,
+a[href="#portfolio"] + * {
+    content: none !important;
+    display: none !important;
 }
 
+/* Cache tout ::after sur les liens de nav */
+.nav-links a::after,
+.mobile-menu a::after {
+    display: none !important;
+}
 
