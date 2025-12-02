@@ -1,4 +1,4 @@
-// scripts/script.js
+// scripts/script.js        
 lucide.createIcons();
 
 // Smooth scroll
